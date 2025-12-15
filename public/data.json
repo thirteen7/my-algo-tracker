@@ -1975,8 +1975,16 @@
   },
   {
     "date": "2025-12-15",
-    "count": 1,
+    "count": 3,
     "problems": [
+      {
+        "title": "C Sofia And The Lost Operations",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "小红走迷宫",
+        "tag": "Uncategorized"
+      },
       {
         "title": "月月查华华的手机",
         "tag": "Uncategorized"
