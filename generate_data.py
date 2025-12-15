@@ -5,11 +5,16 @@ import subprocess
 import sys
 from datetime import datetime
 
+# 强制设置标准输出为 utf-8，解决 Windows 控制台乱码问题
+if sys.platform.startswith('win'):
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 # ================= 配置区域 =================
 
 # 1. 你的题目文件夹在哪里？
 # 如果在别的地方，请写绝对路径，例如: r'D:\MyCode\Algorithm'
-PROBLEMS_DIR = r'D:\\python\\刷题' 
+PROBLEMS_DIR = r'.' 
 
 # 2. 前端项目的 public 目录在哪里？
 OUTPUT_DIR = r'./public'
@@ -35,7 +40,7 @@ def scan_directory(root_path):
     result_data = []
     
     if not os.path.exists(root_path):
-        print(f"错误: 找不到题目目录: {root_path}")
+        print(f"❌ 错误: 找不到题目目录: {root_path}")
         return []
 
     print(f"🔍 正在扫描: {os.path.abspath(root_path)} ...")
@@ -72,7 +77,6 @@ def run_command(command):
     """ 运行 shell 命令并打印输出 """
     print(f"👉 正在执行: {command} ...")
     try:
-        # shell=True 在 Windows 上是必须的
         subprocess.check_call(command, shell=True)
         return True
     except subprocess.CalledProcessError:
@@ -83,22 +87,21 @@ def auto_deploy():
     """ 自动提交并部署 """
     print("\n🚀 开始自动部署流程...")
     
-    # 1. 把新生成的 data.json 添加到 git
-    # 使用引号包裹路径以防路径中有空格
     data_path = os.path.join(OUTPUT_DIR, OUTPUT_FILENAME)
+    # git add
     if not run_command(f'git add "{data_path}"'): return
 
-    # 2. 提交更改 (如果只有 data.json 变了，不会报错；如果没有变化，git commit 可能会提示无变更，我们允许它失败继续往下走)
+    # git commit
     today = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print("📦 提交数据更新到本地 Git...")
+    # 允许 commit 失败（比如没有变化时）
     subprocess.call(f'git commit -m "Auto update data: {today}"', shell=True)
 
-    # 3. 推送到 GitHub 源码仓库 (保存你的代码和数据json)
-    # 假设你的主分支叫 main，如果是 master 请自行修改
+    # git push
     print("☁️ 同步源码到 GitHub (origin/main)...")
     subprocess.call('git push origin main', shell=True)
 
-    # 4. 执行 npm run deploy (构建网站并发布到 gh-pages)
+    # npm run deploy
     print("🚀 构建并发布网站到 GitHub Pages...")
     if run_command('npm run deploy'):
         print("\n✅✅✅ 部署成功！过几分钟刷新你的网站即可看到新数据。")
@@ -114,7 +117,7 @@ if __name__ == "__main__":
         try:
             os.makedirs(OUTPUT_DIR)
         except Exception as e:
-            print(f"无法创建输出目录 {OUTPUT_DIR}: {e}")
+            print(f"❌ 无法创建输出目录 {OUTPUT_DIR}: {e}")
             exit(1)
 
     # 3. 写入文件
@@ -130,8 +133,11 @@ if __name__ == "__main__":
 
     # 4. 询问是否部署
     print("\n--------------------------------")
-    # 为了防止误操作，我加了一个询问。如果你想完全全自动，可以把下面几行删掉，直接调用 auto_deploy()
-    choice = input("❓ 数据已更新。是否立即推送到 GitHub Pages? (y/n): ").strip().lower()
+    try:
+        choice = input("❓ 数据已更新。是否立即推送到 GitHub Pages? (y/n): ").strip().lower()
+    except UnicodeDecodeError:
+        # 兼容某些极端编码环境
+        choice = 'y' 
     
     if choice == 'y':
         auto_deploy()
