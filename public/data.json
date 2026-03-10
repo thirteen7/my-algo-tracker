@@ -2125,10 +2125,28 @@
   },
   {
     "date": "2026-03-09",
-    "count": 1,
+    "count": 2,
     "problems": [
       {
+        "title": "D Linear Probing",
+        "tag": "Uncategorized"
+      },
+      {
         "title": "小苯的蓄水池 Hard",
+        "tag": "Uncategorized"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-10",
+    "count": 2,
+    "problems": [
+      {
+        "title": "B Password",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "不是烤串故事",
         "tag": "Uncategorized"
       }
     ]
