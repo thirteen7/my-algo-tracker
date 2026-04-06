@@ -2290,5 +2290,39 @@
         "tag": "Uncategorized"
       }
     ]
+  },
+  {
+    "date": "2026-03-28",
+    "count": 7,
+    "problems": [
+      {
+        "title": "T 575086 合成西瓜",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "T 618438 电梯接客",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "T 623315 跳柱文明",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "T 632594 采矿文明",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "T 720563 编程比赛",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "T 735143 彩色装饰",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "T 735807 日期统计",
+        "tag": "Uncategorized"
+      }
+    ]
   }
 ]
