@@ -2324,5 +2324,29 @@
         "tag": "Uncategorized"
       }
     ]
+  },
+  {
+    "date": "2026-04-12",
+    "count": 2,
+    "problems": [
+      {
+        "title": "P 16260 蓝桥杯 2026 省 Python Java B 组 和平干饭日",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "P 16262 蓝桥杯 2026 省 Python B 组 定制展示盘",
+        "tag": "Uncategorized"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-15",
+    "count": 1,
+    "problems": [
+      {
+        "title": "数独数组",
+        "tag": "Uncategorized"
+      }
+    ]
   }
 ]
