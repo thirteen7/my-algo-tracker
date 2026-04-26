@@ -2378,5 +2378,61 @@
         "tag": "Uncategorized"
       }
     ]
+  },
+  {
+    "date": "2026-04-22",
+    "count": 3,
+    "problems": [
+      {
+        "title": "A The 67 Th Integer Problem",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "B The 67 Th 6 7 Integer Problem",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "C The 67 Th Permutation Problem",
+        "tag": "Uncategorized"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-23",
+    "count": 1,
+    "problems": [
+      {
+        "title": "D The 67 Th Oeis Problem",
+        "tag": "Uncategorized"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-24",
+    "count": 1,
+    "problems": [
+      {
+        "title": "丛林木马",
+        "tag": "Uncategorized"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-26",
+    "count": 3,
+    "problems": [
+      {
+        "title": "Yet Another Patchouli S Magical Problem",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "结束乐队 无刺有刺 联合 Live 前的交流会",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "铁银银铜金铜银银铁",
+        "tag": "Uncategorized"
+      }
+    ]
   }
 ]
