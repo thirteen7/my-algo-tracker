@@ -2516,5 +2516,45 @@
         "tag": "Uncategorized"
       }
     ]
+  },
+  {
+    "date": "2026-05-10",
+    "count": 5,
+    "problems": [
+      {
+        "title": "数字轮盘",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "小红的冷门副本",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "小红的区间构造",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "小红的因子幂和",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "小红的最佳区间",
+        "tag": "Uncategorized"
+      }
+    ]
+  },
+  {
+    "date": "2026-05-11",
+    "count": 2,
+    "problems": [
+      {
+        "title": "B",
+        "tag": "Uncategorized"
+      },
+      {
+        "title": "跑刀仔",
+        "tag": "Uncategorized"
+      }
+    ]
   }
 ]
